@@ -312,3 +312,5 @@ for i in range(7):
         print()
 
 print("}")
+
+sys.stdout.close()
