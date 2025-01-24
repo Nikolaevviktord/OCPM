@@ -27,7 +27,7 @@ go_to_n_cross_func_name = "zigzag_to_n_cross"
 """
 
 import sys
-sys.stdout = open("code.to_arduino", 'w')
+sys.stdout = open("get_path_func.txt", 'w')
 
 import tkinter as tk
 from tkinter import messagebox
