@@ -43,10 +43,6 @@ void setup() {
 
   Serial.begin(9600);
 
-  oled.init();
-  oled.setScale(2);
-  oled.clear();
-
   int coord = barcode();
 
   zigzag_to_n_cross(1);
