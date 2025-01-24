@@ -17,6 +17,7 @@
 turn_left_func_name = "turn_left"
 turn_right_func_name = "turn_right"
 go_to_n_cross_func_name = "zigzag_to_n_cross"
+stop_func_name = "faststop"
 
 
 
@@ -129,9 +130,9 @@ def way(weight, finish):
 
     def get_weight(x1, y1, x2, y2):
         if x1 == x2:
-            index = min(y1, y2) + x1 * COLS
+            index = 9 * x1 + min(y1, y2)
         else:
-            index = 28 + y1 + min(x1, x2) * (ROWS - 1)
+            index = 9 * min(x1, x2) + 4 + y1
         try:
             return weight[index]
         except Exception as E:
@@ -154,7 +155,7 @@ def way(weight, finish):
                 edge_weight = get_weight(cx, cy, nx, ny)
                 new_dist = current_dist + edge_weight
 
-                if (nx, ny) not in dist or new_dist < dist[(nx, ny)]:
+                if (new_dist < dist.get((nx, ny), 10 ** 18)):
                     dist[(nx, ny)] = new_dist
                     prev[(nx, ny)] = (cx, cy)
                     pq.append((new_dist, (nx, ny)))
@@ -289,6 +290,7 @@ for i in range(7):
             elif code_now[il] == 2:
                 print(f"    {turn_left_func_name}();")
 
+        print(f"    {stop_func_name}();")
         print("    delay(4000);")
 
         code_now = [1, 1] + code_now[::-1]
