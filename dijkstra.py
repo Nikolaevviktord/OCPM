@@ -16,7 +16,7 @@
 
 turn_left_func_name = "turn_left"
 turn_right_func_name = "turn_right"
-go_zigzag_to_n_cross_func_name = "zigzag_to_n_cross"
+go_to_n_cross_func_name = "zigzag_to_n_cross"
 
 
 
@@ -283,7 +283,7 @@ for i in range(7):
 
         for il in range(len(code_now)):
             if code_now[il] == 0:
-                print(f"    {go_zigzag_to_n_cross_func_name}(1);")
+                print(f"    {go_to_n_cross_func_name}(1);")
             elif code_now[il] == 1:
                 print(f"    {turn_right_func_name}();")
             elif code_now[il] == 2:
@@ -301,7 +301,7 @@ for i in range(7):
 
         for il in range(len(code_now)):
             if code_now[il] == 0:
-                print(f"    {go_zigzag_to_n_cross_func_name}(1);")
+                print(f"    {go_to_n_cross_func_name}(1);")
             elif code_now[il] == 1:
                 print(f"    {turn_right_func_name}();")
             elif code_now[il] == 2:
