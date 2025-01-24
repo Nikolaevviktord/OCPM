@@ -190,8 +190,8 @@ byte barcode() {
   while (t_ind < index) {
     for (byte i = 0; i < round(((double)times[t_ind] - (double)times[t_ind - 1]) / one_line); ++i) {
       mask[m_ind++] = last;
-      last ^= 1;
-    } ++t_ind;
+    } last ^= 1;
+    ++t_ind;
   }
 
   for (byte i = m_ind; i < 8; ++i) mask[i] = last;
